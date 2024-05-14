@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('choleras', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('hospital');
+            $table->string('gender');
+            $table->string('status');
+            $table->string('province');
+            $table->string('district');
+            $table->string('city');
+            $table->string('age');
             $table->timestamps();
         });
     }
