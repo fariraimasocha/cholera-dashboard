@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Cholera extends Model
 {
     use HasFactory;
+
+    protected  $fillable = [
+        'name',
+        'hospital',
+        'province',
+        'district',
+        'city',
+        'status',
+        'gender',
+        'age'
+        ];
 }
