@@ -31,7 +31,7 @@ class CholeraController extends Controller
 
         $barChart = (new LarapexChart)
         ->barChart()
-            ->addBar(' All Patients',$patientsConfirmed)
+            ->addBar(' All Confirmed',$patientsConfirmed)
             ->setXAxis(range(1, count($patientsConfirmed)))
             ->setTitle('All Confirmed Cases')
             ->setColors(['#003087', '#fbc33b'])

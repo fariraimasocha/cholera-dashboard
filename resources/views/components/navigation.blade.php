@@ -19,6 +19,15 @@
                         <x-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')">
                             {{ __('Monitor') }}
                         </x-nav-link>
+                        <x-nav-link href="{{ route('records.index') }}" :active="request()->routeIs('records.index')">
+                            {{ __('Reports') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('map.index') }}" :active="request()->routeIs('map.index')">
+                            {{ __('Map') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('records.create') }}" :active="request()->routeIs('records.create')">
+                            {{ __('Record a Case') }}
+                        </x-nav-link>
 
                     </div>
                 </div>

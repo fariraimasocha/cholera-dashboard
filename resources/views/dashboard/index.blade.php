@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="px-16 mt-10 to-black1 flex justify-between">
+    <div class="px-16 mt-6 to-black1 flex justify-between">
 
 
         @php
@@ -66,7 +66,7 @@
     </div>
 
 
-    <div class="flex space-x-5 mt-8 px-16">
+    <div class="flex space-x-5 mt-5 px-16">
         <div class="w-6/12">
             <div class="bg-white shadow-xl rounded-lg p-4 space-y-4">
                 <apexchart series="series" v-bind="@js($chart)"></apexchart>
@@ -82,7 +82,7 @@
                 <div class="bg-white shadow-xl rounded-lg p-4 space-y-4">
                     <apexchart series="series" v-bind="@js($pieChart)"></apexchart>
                 </div>
-                <div class="bg-white shadow-xl rounded-lg p-4 space-y-4 mt-14">
+                <div class="bg-white shadow-xl rounded-lg p-4 space-y-4 mt-10">
                     <apexchart series="series" v-bind="@js($pieChartRecovered)"></apexchart>
                 </div>
 

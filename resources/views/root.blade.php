@@ -10,4 +10,5 @@
     <body class="font-sans antialiased">
         @splade
     </body>
+
 </html>

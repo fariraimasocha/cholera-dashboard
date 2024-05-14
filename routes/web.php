@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CholeraController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['splade'])->group(function () {
     Route::get('/', [CholeraController::class, 'index'])->name('dashboard.index');
     Route::resource('/reports',CholeraController::class);
+    Route::resource('/records', ReportController::class);
+    Route::resource('/map', MapController::class);
 
 
     // Registers routes to support the interactive components...
