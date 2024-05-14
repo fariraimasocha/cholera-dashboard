@@ -1,5 +1,5 @@
 <x-splade-data default="{ open: false }">
-    <nav class="bg-white border-b border-gray-100">
+    <nav class="bg-white border-b border-gray-100 w-11/12 justify-center mx-auto rounded mt-8 border-2">
         <!-- Primary Navigation Menu -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -14,12 +14,12 @@
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                            {{ __('Home') }}
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')">
+                            {{ __('Reports') }}
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('docs') }}" :active="request()->routeIs('docs')">
-                            {{ __('Documentation') }}
-                        </x-nav-link>
                     </div>
                 </div>
 
@@ -39,12 +39,9 @@
         <div v-bind:class="{'block': data.open, 'hidden': ! data.open }" class="sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
                 <x-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                    {{ __('Home') }}
+                    {{ __('Dashboard') }}
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link href="{{ route('docs') }}" :active="request()->routeIs('docs')">
-                    {{ __('Documentation') }}
-                </x-responsive-nav-link>
             </div>
         </div>
     </nav>

@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Cholera;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cholera>
+ * @extends Factory<Cholera>
  */
 class CholeraFactory extends Factory
 {
@@ -16,8 +17,20 @@ class CholeraFactory extends Factory
      */
     public function definition(): array
     {
+        $provinces = ['Harare', 'Bulawayo', 'Mashonaland', 'Manicaland', 'Matabeleland', 'Midlands'];
+        $cities = ['Harare', 'Bulawayo', 'Mutare', 'Gweru', 'Masvingo', 'Kwekwe'];
+        $districts = ['Highfield', 'Mabvuku', 'Nkulumane', 'Sakubva', 'Sizinda', 'Gokwe'];
+        $statuses = ['Confirmed', 'Suspected', 'Recovered', 'Deceased'];
+
         return [
-            //
+            'province' => $this->faker->randomElement($provinces),
+            'city' => $this->faker->randomElement($cities),
+            'district' => $this->faker->randomElement($districts),
+            'hospital' => $this->faker->company,
+            'status' => $this->faker->randomElement($statuses),
+            'age' => $this->faker->numberBetween(1, 100),
+            'name' => $this->faker->name,
+            'gender' => $this->faker->randomElement(['male', 'female'])
         ];
     }
 }

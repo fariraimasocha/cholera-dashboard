@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CholeraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['splade'])->group(function () {
-    Route::get('/', fn () => view('home'))->name('home');
-    Route::get('/docs', fn () => view('docs'))->name('docs');
+    Route::get('/', fn () => view('dashboard.index'))->name('home');
+    Route::resource('/reports',CholeraController::class);
+
 
     // Registers routes to support the interactive components...
     Route::spladeWithVueBridge();
