@@ -25,7 +25,7 @@
                         <x-nav-link href="{{ route('map.index') }}" :active="request()->routeIs('map.index')">
                             {{ __('Map') }}
                         </x-nav-link>
-                        <x-nav-link href="{{ route('records.create') }}" :active="request()->routeIs('records.create')">
+                        <x-nav-link href="{{ route('reports.create') }}" :active="request()->routeIs('reports.create')">
                             {{ __('Record a Case') }}
                         </x-nav-link>
 
