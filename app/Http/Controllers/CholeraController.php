@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCholeraRequest;
 use App\Http\Requests\UpdateCholeraRequest;
 use App\Models\Cholera;
 use ProtoneMedia\Splade\Facades\Toast;
+use ArielMejiaDev\LarapexCharts\LarapexChart;
 
 class CholeraController extends Controller
 {
@@ -15,8 +16,47 @@ class CholeraController extends Controller
     public function index()
     {
         $patients = Cholera::all();
+        $patientChart = Cholera::all()->pluck('id')->all();
+        $patientsDeceased = Cholera::all()->where('status', 'Deceased')->pluck('id')->toArray();
+        $patientsRecovered = Cholera::all()->where('status', 'Recovered')->pluck('id')->toArray();
+        $patientsConfirmed = Cholera::all()->where('status', 'Confirmed')->pluck('id')->toArray();
 
-        return view('dashboard.index', compact('patients'));
+        $chart = (new LarapexChart)
+            ->lineChart()
+            ->addLine('All Cases', $patientChart)
+            ->setXAxis(range(1, count($patientChart)))
+            ->setColors(['#003087', '#fbc33b'])
+            ->setTitle('All Cases')
+            ->toVue();
+
+        $barChart = (new LarapexChart)
+        ->barChart()
+            ->addBar(' All Patients',$patientsConfirmed)
+            ->setXAxis(range(1, count($patientsConfirmed)))
+            ->setTitle('All Confirmed Cases')
+            ->setColors(['#003087', '#fbc33b'])
+            ->toVue();
+
+        $pieChart = (new LarapexChart)
+            ->pieChart()
+            ->addPieces($patientsDeceased)
+            ->setLabels(range(1, count($patientsDeceased)))
+            ->setColors(['#003087', '#fbc33b'])
+            ->setFontFamily('Quicksand')
+            ->setTitle('All Deceased')
+            ->toVue();
+
+        $pieChartRecovered = (new LarapexChart)
+            ->pieChart()
+            ->addPieces($patientsRecovered)
+            ->setLabels(range(1, count($patientsRecovered)))
+            ->setFontFamily('Quicksand')
+            ->setColors(['#003087', '#003087'])
+            ->setTitle('All Recovered')
+            ->toVue();
+
+
+        return view('dashboard.index', compact('chart', 'patients', 'barChart', 'pieChart', 'pieChartRecovered'));
     }
 
     /**

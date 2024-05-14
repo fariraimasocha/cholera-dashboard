@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['splade'])->group(function () {
-    Route::get('/', fn () => view('dashboard.index'))->name('home');
+    Route::get('/', [CholeraController::class, 'index'])->name('dashboard.index');
     Route::resource('/reports',CholeraController::class);
 
 

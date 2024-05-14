@@ -64,13 +64,33 @@
 
 
     </div>
+
+
     <div class="flex space-x-5 mt-8 px-16">
-        <div>
+        <div class="w-6/12">
+            <div class="bg-white shadow-xl rounded-lg p-4 space-y-4">
+                <apexchart series="series" v-bind="@js($chart)"></apexchart>
+            </div>
+        </div>
+        <div class="w-6/12 flex space-x-2">
+            <div class="w-6/12">
+                <div class="bg-white shadow-xl rounded-lg p-4 space-y-4">
+                    <apexchart series="series" v-bind="@js($barChart)"></apexchart>
+                </div>
+            </div>
+            <div class="w-6/12">
+                <div class="bg-white shadow-xl rounded-lg p-4 space-y-4">
+                    <apexchart series="series" v-bind="@js($pieChart)"></apexchart>
+                </div>
+                <div class="bg-white shadow-xl rounded-lg p-4 space-y-4 mt-14">
+                    <apexchart series="series" v-bind="@js($pieChartRecovered)"></apexchart>
+                </div>
+
+            </div>
+
 
         </div>
-        <div>
 
-        </div>
 
     </div>
 
