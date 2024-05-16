@@ -2,18 +2,221 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreMapRequest;
+use App\Http\Requests\UpdateMapRequest;
+use App\Models\Map;
 
 class MapController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $locations = [
-            ["lat" => 12.9716, "lng" => 77.5946],
-            ["lat" => 26.9124, "lng" => 75.7873],
-            ["lat" => 22.2587, "lng" => 71.1924],
+        $initialMarkers = [
+            [
+                'position' => [
+                    'lat' => -17.4097,
+                    'lng' => 31.0426,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.5728,
+                    'lng' => 31.1126,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3474,
+                    'lng' => 30.2035,
+                ],
+                'draggable' => false,
+            ],
+            [
+                'position' => [
+                    'lat' => -18.9137,
+                    'lng' => 32.6897,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.8252,
+                    'lng' => 31.0335,
+                ],
+                'draggable' => false,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
+            [
+                'position' => [
+                    'lat' => -17.3019,
+                    'lng' => 31.3306,
+                ],
+                'draggable' => true,
+            ],
         ];
-        return view('map.index',
-            ['locations'=>$locations]);
+
+        return view('map.index', compact('initialMarkers'));
     }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+
 }

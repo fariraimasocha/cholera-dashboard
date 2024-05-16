@@ -20,7 +20,9 @@ Route::middleware(['splade'])->group(function () {
     Route::get('/', [CholeraController::class, 'index'])->name('dashboard.index');
     Route::resource('/reports',CholeraController::class);
     Route::resource('/records', ReportController::class);
+
     Route::resource('/map', MapController::class);
+
 
 
     // Registers routes to support the interactive components...
