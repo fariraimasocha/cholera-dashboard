@@ -17,6 +17,8 @@ class Cholera extends Model
         'city',
         'status',
         'gender',
-        'age'
+        'age',
+        'lng',
+        'lat'
         ];
 }

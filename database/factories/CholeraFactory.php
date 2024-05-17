@@ -30,7 +30,9 @@ class CholeraFactory extends Factory
             'status' => $this->faker->randomElement($statuses),
             'age' => $this->faker->numberBetween(1, 100),
             'name' => $this->faker->name,
-            'gender' => $this->faker->randomElement(['male', 'female'])
+            'gender' => $this->faker->randomElement(['male', 'female']),
+            'lat' => $this->faker->randomFloat(6, -20.4097, -17.4097),
+            'lng' => $this->faker->randomFloat(6, 31.3306, 34.3306)
         ];
     }
 }

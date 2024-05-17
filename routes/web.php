@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::resource('/map', MapController::class);
 Route::middleware(['splade'])->group(function () {
     Route::get('/', [CholeraController::class, 'index'])->name('dashboard.index');
     Route::resource('/reports',CholeraController::class);
     Route::resource('/records', ReportController::class);
 
-    Route::resource('/map', MapController::class);
+
 
 
 

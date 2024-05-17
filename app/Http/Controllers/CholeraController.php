@@ -20,6 +20,7 @@ class CholeraController extends Controller
         $patientsDeceased = Cholera::all()->where('status', 'Deceased')->pluck('id')->toArray();
         $patientsRecovered = Cholera::all()->where('status', 'Recovered')->pluck('id')->toArray();
         $patientsConfirmed = Cholera::all()->where('status', 'Confirmed')->pluck('id')->toArray();
+        $patientsSuspected = Cholera::all()->where('status', 'Suspected')->pluck('id')->toArray();
 
         $chart = (new LarapexChart)
             ->lineChart()
@@ -56,7 +57,7 @@ class CholeraController extends Controller
             ->toVue();
 
 
-        return view('dashboard.index', compact('chart', 'patients', 'barChart', 'pieChart', 'pieChartRecovered'));
+        return view('dashboard.index', compact('chart', 'patients', 'barChart', 'pieChart', 'pieChartRecovered','patientsSuspected'));
     }
 
     /**

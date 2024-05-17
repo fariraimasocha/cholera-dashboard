@@ -20,6 +20,11 @@
             <x-splade-input name="district" label="District" type="text"/>
             <x-splade-input name="city" label="City" type="text"/>
             <x-splade-input name="age" label="Age" type="text"/>
+
+
+            <x-splade-input name="lat" label="Latitude" type="text"/>
+            <x-splade-input name="lng" label="Longitude" type="text"/>
+
             <x-splade-submit class="mt-5"/>
         </x-splade-form>
     </div>

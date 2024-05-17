@@ -25,6 +25,7 @@
     Home
 </a>
     <h1 class='text-center'>Cholera Concentration Map</h1>
+
     <div id='map'></div>
 
     <script src='https://unpkg.com/leaflet@1.8.0/dist/leaflet.js' crossorigin=''></script>

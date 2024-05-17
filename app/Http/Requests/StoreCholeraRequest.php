@@ -31,6 +31,9 @@ class StoreCholeraRequest extends FormRequest
             'district' => ['required', 'string'],
             'city' => ['required', 'string'],
             'age' => ['required', 'string'],
+            'lng' => ['required', 'string'],
+            'lat' => ['required', 'string'],
+
         ];
     }
 }

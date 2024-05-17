@@ -51,11 +51,11 @@
         </div>
 
         @php
-            $totalPatientsSuspected = \App\Models\Cholera::where('status', 'Confirmed')->count();
+            $totalPatientsSuspected = \App\Models\Cholera::where('status', 'Suspected')->count();
         @endphp
         <div class="bg-blue1 w-2/12 rounded py-3 hover:bg-black1 transition">
             <p class="text-white text-center">
-                Total Confirmed
+                Total Suspected
             </p>
             <h1 class="text-white text-center text-2xl font-semi">
                 {{ $totalPatientsSuspected }}
